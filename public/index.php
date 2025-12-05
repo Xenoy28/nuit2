@@ -9,8 +9,12 @@
 </head>
 <body>
 <header>
-    <nav>
-        <div class="logo"> NIRD Village</div>
+     <nav>
+        <div class="logo">
+            <a href="index.php" title="image">
+                <img src="nird.png" alt="nird" width="100" height="100">
+            </a>
+        </div>
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="solution.php">Solutions</a></li>
