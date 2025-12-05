@@ -1,68 +1,43 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Inscription</title>
+    <title>Inscription - Nuit Info</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .form-container {
-            background: #fff;
-            padding: 20px 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            margin-top: 15px;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+        .error { color: red; background: #ffe6e6; padding: 10px; margin: 10px 0; }
+        .success { color: green; background: #e6ffe6; padding: 10px; margin: 10px 0; }
     </style>
 </head>
 <body>
-<div class="form-container">
-    <h2>Formulaire d'inscription</h2>
-    <form method="post" action="../src/traitement/Inscription.php">
-        <label for="email">Email :</label>
-        <input type="email" name="email" id="email" required>
+<h1>📝 Inscription</h1>
 
-        <label for="pseudo">Pseudo :</label>
-        <input type="text" name="pseudo" id="pseudo" required>
+<?php if (!empty($_SESSION['error'])): ?>
+    <div class="error"><?= htmlspecialchars($_SESSION['error']) ?></div>
+    <?php unset($_SESSION['error']); ?>
+<?php endif; ?>
 
-        <label for="code_pin">Code PIN :</label>
-        <input type="password" name="code_pin" id="code_pin" required>
+<?php if (!empty($_SESSION['success'])): ?>
+    <div class="success"><?= htmlspecialchars($_SESSION['success']) ?></div>
+    <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
 
-        <input type="submit" value="S'inscrire">
-    </form>
-</div>
+<form method="POST" action="../traitements/inscription_traitement.php">
+    <label>Pseudo :<br>
+        <input type="text" name="pseudo" required minlength="3" maxlength="50">
+    </label><br><br>
+
+    <label>Email :<br>
+        <input type="email" name="email" required>
+    </label><br><br>
+
+    <label>Code PIN (4 chiffres) :<br>
+        <input type="text" name="code_pin" pattern="[0-9]{4}" title="4 chiffres requis" required>
+    </label><br><br>
+
+    <button type="submit">S’inscrire</button>
+</form>
+
+<p><a href="Connexion.php">Déjà inscrit ? Connectez-vous</a></p>
 </body>
 </html>
