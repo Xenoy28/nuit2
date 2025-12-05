@@ -15,7 +15,7 @@
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="solu.php">Solutions</a></li>
-            <li><a href="probleme.php">Problèmes</a></li>
+            <li><a href="probleme.html">Problèmes</a></li>
             <li><a href="quiz.php">Quiz NIRD</a></li>
             <li><a href="defi.php">Défis</a></li>
         </ul>

@@ -334,11 +334,3 @@ footer {
         gap: 6px;
     }
 }
-.card img {
-    width: 100%;          /* s'adapte à la largeur */
-    height: auto;         /* ne déforme pas */
-    max-height: 150px;    /* réduit l’image pour qu’elle rentre */
-    object-fit: contain;  /* garantit que RIEN n’est coupé */
-    display: block;
-    margin: 10px auto;
-}
