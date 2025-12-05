@@ -97,5 +97,5 @@ if ($envoye) {
     // ⚠️ Normal en local avec XAMPP/WAMP sans MailHog/SMTP
 }
 
-header('Location: ../public/Connexion.php');
+header('Location: ../public/login.php');
 exit;

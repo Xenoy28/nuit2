@@ -10,10 +10,10 @@ if (isset($_POST['pseudo'], $_POST['code_pin'])) {
     $pseudo = trim($_POST['pseudo']);
     $code_pin = trim($_POST['code_pin']);
     if (empty($pseudo) || empty($code_pin) || strlen($pseudo) > 50 || strlen($code_pin) != 4 || !ctype_digit($code_pin)) {
-        header("Location: ../../public/Connexion.php?error=1");
+        header("Location: ../../public/login.php?error=1");
         exit();
     } elseif ($_SESSION['login_attempts'] >= $max_attempts) {
-        header("Location: ../../public/Connexion.php?error=1");
+        header("Location: ../../public/login.php?error=1");
         exit();
     } else {
         try {
@@ -30,17 +30,17 @@ if (isset($_POST['pseudo'], $_POST['code_pin'])) {
             } else {
                 // Échec : incrémenter les tentatives
                 $_SESSION['login_attempts']++;
-                header("Location: ../../public/Connexion.php?error=1");
+                header("Location: ../../public/login.php?error=1");
                 exit();
             }
         } catch (PDOException $e) {
             error_log("Erreur BDD : " . $e->getMessage());
-            header("Location: ../../public/Connexion.php?error=1");
+            header("Location: ../../public/login.php?error=1");
             exit();
         }
     }
 } else {
-    header("Location: ../../public/Connexion.php");
+    header("Location: ../../public/login.php");
     exit();
 }
 ?>

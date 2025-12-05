@@ -8,7 +8,7 @@
         :root{
             --bg: #fff8f3;
             --card: #ffffff;
-            --accent: #f28c38;      /* orange doux */
+            --accent: #f28c38;
             --accent-hover: #d9731f;
             --text: #3a2f2f;
             --muted: #7a6a6a;
@@ -158,7 +158,6 @@
             codePinError.style.display = 'none';
         }
 
-        // Si valide, laisser soumettre ; sinon, empêcher
         if (!valid) {
             e.preventDefault();
         }

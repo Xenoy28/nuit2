@@ -22,7 +22,7 @@
     <?php unset($_SESSION['success']); ?>
 <?php endif; ?>
 
-<form method="POST" action="../traitements/inscription_traitement.php">
+<form method="POST" action="login.php">
     <label>Pseudo :<br>
         <input type="text" name="pseudo" required minlength="3" maxlength="50">
     </label><br><br>
@@ -35,9 +35,9 @@
         <input type="text" name="code_pin" pattern="[0-9]{4}" title="4 chiffres requis" required>
     </label><br><br>
 
-    <button type="submit">S’inscrire</button>
+    <input type="submit" value="S'inscrire">
 </form>
 
-<p><a href="Connexion.php">Déjà inscrit ? Connectez-vous</a></p>
+<p><a href="login.php">Déjà inscrit ? Connectez-vous</a></p>
 </body>
 </html>

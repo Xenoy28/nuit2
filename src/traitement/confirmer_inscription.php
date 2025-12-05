@@ -6,7 +6,7 @@ $token = filter_input(INPUT_GET, 'token', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if (!$token) {
     $_SESSION['errors'] = ["Lien de confirmation invalide."];
-    header('Location: Connexion.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -18,7 +18,7 @@ try {
 
     if (!$user) {
         $_SESSION['errors'] = ["Ce lien a expiré ou le compte est déjà activé."];
-        header('Location: Connexion.php');
+        header('Location: login.php');
         exit;
     }
 
@@ -27,10 +27,10 @@ try {
     $update->execute([$user['id_inscrit']]);
 
     $_SESSION['success'] = "🎉 Bonjour " . htmlspecialchars($user['pseudo']) . ", votre compte est maintenant activé ! Vous pouvez vous connecter.";
-    header('Location: Connexion.php');
+    header('Location: login.php');
 
 } catch (Exception $e) {
     error_log("Erreur activation : " . $e->getMessage());
     $_SESSION['errors'] = ["Erreur lors de la confirmation. Veuillez réessayer."];
-    header('Location: Connexion.php');
+    header('Location: login.php');
 }

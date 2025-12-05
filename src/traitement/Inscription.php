@@ -88,11 +88,11 @@ try {
 
     if (mail($email, $sujet, $message_html, $headers)) {
         $_SESSION['success'] = "Un email de confirmation a été envoyé à $email.";
-        header('Location: ../../public/Connexion.php');
+        header('Location: ../../public/login.php');
     } else {
         // Option : enregistrer dans logs, ou utiliser PHPMailer
         $_SESSION['warning'] = "Compte créé, mais échec d’envoi de l’email. Contactez le support.";
-        header('Location: ../../public/Connexion.php');
+        header('Location: ../../public/login.php');
     }
 
 } catch (Exception $e) {
