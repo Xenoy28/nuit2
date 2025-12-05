@@ -113,7 +113,7 @@
         <h1 class="title">Connexion</h1>
     </header>
 
-    <form id="login-form" action="index.php" method="post" novalidate>
+    <form id="login-form" action="Retro_2000/Retro_page_1.html" method="post" novalidate>
         <?php if (isset($_GET['error'])): ?>
             <div class="global-error">Pseudo ou code PIN incorrect.</div>
         <?php endif; ?>

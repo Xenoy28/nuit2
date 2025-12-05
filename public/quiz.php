@@ -14,10 +14,10 @@
         <div class="logo">NIRD Village</div>
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="solu.php">Solutions</a></li>
+            <li><a href="solution.html">Solutions</a></li>
             <li><a href="probleme.html">Problèmes</a></li>
             <li><a href="quiz.php">Quiz NIRD</a></li>
-            <li><a href="defi.php">Défis</a></li>
+            <li><a href="Retro_2000/Retro_page_1.html">Défis</a></li>
         </ul>
     </nav>
 </header>
